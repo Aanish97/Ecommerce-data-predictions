@@ -1,7 +1,10 @@
 import pandas as pd
 
-#de_duplication
+#reading csv into dataframe
+#"D:/.Semester 7/FYP/FYP docx/data.csv"
 df = pd.read_csv("data.csv", encoding="ISO-8859-1")
+
+#de_duplication
 df.drop_duplicates(subset=['InvoiceNo', 'Description', 'Quantity', 'InvoiceDate', 'CustomerID', 'UnitPrice', 'Country'], keep='first', inplace=True)
 
 #date_format_standardization
