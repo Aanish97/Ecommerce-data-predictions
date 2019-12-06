@@ -32,8 +32,7 @@ history = [x for x in train]
 predictions = list()
 for t in range(len(test)):
     model = ARIMA(history, order=(5, 1, 0))
-
-    model_fit = model.fit(disp=False, transparams=False, methods='css')
+    model_fit = model.fit(disp=False, transparams=False, methods='nm', maxiter=200)
     output = model_fit.forecast()
     yhat = output[0]
     predictions.append(yhat)
