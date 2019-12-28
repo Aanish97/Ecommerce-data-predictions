@@ -24,24 +24,26 @@ df = pd.read_excel("ARIMA.xlsx", encoding="ISO-8859-1", sep=';')
 
 df = pd.Series(df["UnitPrice"].values, df["InvoiceDate"])
 
+print(df)
 
 X = df.values
-size = int(len(X) * 0.66)
+size = int(len(X) * 1)
 train, test = X[0:size], X[size:]
 history = [x for x in train]
 predictions = list()
-for t in range(len(test)):
-    model = ARIMA(history, order=(5, 1, 0))
+for t in range(50):#range(len(test)):
+    model = ARIMA(history, order=(5, 1, 0))#order of autoregressive model, order of degree of difference, order of moving average
     model_fit = model.fit(disp=False, transparams=False, methods='nm', maxiter=200)
     output = model_fit.forecast()
     yhat = output[0]
     predictions.append(yhat)
-    obs = test[t]
-    history.append(obs)
-    print('predicted=%f, expected=%f' % (yhat, obs))
-error = mean_squared_error(test, predictions)
-print('Test MSE: %.3f' % error)
-# plot
-pyplot.plot(test)
-pyplot.plot(predictions, color='red')
+    history.append(yhat)
+    print(yhat)
+    #obs = test[t]
+    #history.append(obs)
+    #print('predicted=%f, expected=%f' % (yhat, obs))
+#error = mean_squared_error(test, predictions)
+#print('Test MSE: %f' % error)
+#pyplot.plot(test)
+pyplot.plot(predictions)#, color='red')
 pyplot.show()

@@ -8,8 +8,12 @@ df = pd.read_csv("D:/.Semester 7/FYP/FYP docx/data.csv", encoding="ISO-8859-1")
 df.drop_duplicates(subset=['InvoiceNo', 'Description', 'Quantity', 'InvoiceDate', 'CustomerID', 'UnitPrice', 'Country'], keep='first', inplace=True)
 
 #date_format_standardization
-df['InvoiceDate'] = pd.to_datetime(df.InvoiceDate, errors='coerce')
-df['InvoiceDate'] = df['InvoiceDate'].dt.strftime('%e -%m -%Y')
+if '/' in df['InvoiceDate']:
+    df['InvoiceDate'] = pd.to_datetime(df.InvoiceDate, errors='coerce')
+    df['InvoiceDate'] = df['InvoiceDate'].dt.strftime('%e -%m -%Y')
+else:
+    df['InvoiceDate'] = pd.to_datetime(df.InvoiceDate, errors='coerce')
+    df['InvoiceDate'] = df['InvoiceDate'].dt.strftime('%m -%e -%Y')
 
 
 #transaction wise data
