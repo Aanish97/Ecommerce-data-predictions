@@ -1,50 +1,53 @@
-from __future__ import division
-from pandas import datetime
-from datetime import datetime, timedelta
+from mlxtend.preprocessing import TransactionEncoder
+from mlxtend.frequent_patterns import fpgrowth
+#from pyspark.mllib.fpm import FPGrowth
+
+import sys
 import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
-import seaborn as sns
-import plotly.offline as pyoff
-import plotly.graph_objs as go
-import chart_studio
 
-def parser(x):
-    return datetime.strptime('190' + x, '%Y-%m')
+df = pd.read_csv("D:/.Semester 7/FYP/FYP docx/data.csv", encoding="ISO-8859-1")
+df.drop_duplicates(subset=['InvoiceNo', 'Description', 'Quantity', 'InvoiceDate', 'CustomerID', 'UnitPrice', 'Country'], keep='first', inplace=True)
 
-df = pd.read_excel("after_ETL.xlsx", encoding="ISO-8859-1", sep=';')
+if '/' in df['InvoiceDate']:
+    df['InvoiceDate'] = pd.to_datetime(df.InvoiceDate, errors='coerce')
+    df['InvoiceDate'] = df['InvoiceDate'].dt.strftime('%e -%m -%Y')
+else:
+    df['InvoiceDate'] = pd.to_datetime(df.InvoiceDate, errors='coerce')
+    df['InvoiceDate'] = df['InvoiceDate'].dt.strftime('%m -%e -%Y')
 
-df['InvoiceDate'] = pd.to_datetime(df.InvoiceDate, errors='coerce')
-df['InvoiceDate'] = df['InvoiceDate'].dt.strftime('%Y-%m-%d')
+unique_items = df['Description'].unique()
+unique_items = unique_items.tolist()
+print(unique_items)
 
-print(df.head)
+temp=str(df['InvoiceNo'][0])
+print(temp)
+
+tid = list()
+temp_tid = list()
+for index, rows in df.iterrows():
+    if temp == rows['InvoiceNo']:
+        temp_tid.append(unique_items.index(rows['Description']))
+    else:
+        temp_tid.sort()
+        tid.append(temp_tid)#append transaction to transactions list
+        temp_tid = list()
+        temp = str(rows['InvoiceNo'])
+        temp_tid.append(unique_items.index(rows['Description']))
+
+print(tid)
+
+sys.setrecursionlimit(25000)
 
 
-tx_user = pd.DataFrame(df['CustomerID'].unique())
-tx_user.columns = ['CustomerID']
+te = TransactionEncoder()
+te_ary = te.fit(tid).transform(tid)
+df = pd.DataFrame(te_ary, columns=te.columns_)
+frequent_itemsets = fpgrowth(df, min_support=0.01, use_colnames=True)
+print("frequent items")
+print(frequent_itemsets)
 
-#get the max purchase date for each customer and create a dataframe with it
-tx_max_purchase = df.groupby('CustomerID').InvoiceDate.max().reset_index()
-tx_max_purchase.columns = ['CustomerID','MaxPurchaseDate']
 
-#we take our observation point as the max invoice date in our dataset
-tx_max_purchase['Recency'] = (tx_max_purchase['MaxPurchaseDate'].max() - tx_max_purchase['MaxPurchaseDate']).dt.days
 
-#merge this dataframe to our new user dataframe
-tx_user = pd.merge(tx_user, tx_max_purchase[['CustomerID','Recency']], on='CustomerID')
 
-tx_user.head()
 
-#plot a recency histogram
 
-plot_data = [
-    go.Histogram(
-        x=tx_user['Recency']
-    )
-]
-
-plot_layout = go.Layout(
-        title='Recency'
-    )
-fig = go.Figure(data=plot_data, layout=plot_layout)
-pyoff.iplot(fig)

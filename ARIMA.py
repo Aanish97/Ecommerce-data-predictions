@@ -14,9 +14,13 @@ def parser(x):
 
 df = pd.read_excel("after_ETL.xlsx", encoding="ISO-8859-1", sep=';')
 
+
+#removing the cancelled orders
+df = df[~df['InvoiceNo'].str.contains('C')]
+print(df)
+
 df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'], errors='coerce')
 df['InvoiceDate'] = df['InvoiceDate'].dt.strftime('%Y-%m-%d')
-
 
 df = df.groupby(['InvoiceDate'])['UnitPrice'].sum()
 df = df.to_frame()
@@ -81,5 +85,5 @@ print(type(new_dff))
 print(df)
 
 #df = df.to_frame()
-df.to_excel('ARIMA.xlsx')
+#df.to_excel('ARIMA.xlsx')
 new_dff.to_excel('ARIMA.xlsx')
