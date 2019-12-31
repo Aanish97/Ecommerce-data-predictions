@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af44dbb6-14fa-4cf6-b2d5-e4faf9c01b71" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ARIMA.py" beforeDir="false" afterPath="$PROJECT_DIR$/ARIMA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ARIMA.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ARIMA.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPgrowth.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/FPgrowth.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPgrowth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/after_ETL.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/after_ETL.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPgrowth.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/FPgrowth.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customerSegmentation.py" beforeDir="false" afterPath="$PROJECT_DIR$/customerSegmentation.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ARIMA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+            <state relative-caret-position="294">
+              <caret line="88" selection-start-line="88" selection-end-line="88" selection-end-column="30" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -29,13 +27,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FPgrowth.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="25" selection-start-line="25" selection-end-line="25" selection-end-column="64" />
+            <state relative-caret-position="276">
+              <caret line="60" column="39" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
               <folding>
-                <element signature="e#0#17#0" expanded="true" />
+                <element signature="e#0#52#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -50,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/customerSegmentation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state>
+              <caret column="17" lean-forward="true" selection-start-column="17" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -104,8 +102,8 @@
         <option value="$PROJECT_DIR$/auto_arima_model.py" />
         <option value="$PROJECT_DIR$/preProcessing.py" />
         <option value="$PROJECT_DIR$/ARIMA.py" />
-        <option value="$PROJECT_DIR$/FPgrowth.py" />
         <option value="$PROJECT_DIR$/customerSegmentation.py" />
+        <option value="$PROJECT_DIR$/FPgrowth.py" />
       </list>
     </option>
   </component>
@@ -144,7 +142,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.customerSegmentation">
+  <component name="RunManager" selected="Python.FPgrowth">
     <configuration name="ARIMA" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="FYP" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -252,8 +250,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.customerSegmentation" />
         <item itemvalue="Python.FPgrowth" />
+        <item itemvalue="Python.customerSegmentation" />
         <item itemvalue="Python.ARIMA" />
         <item itemvalue="Python.preProcessing" />
         <item itemvalue="Python.auto_arima_model" />
@@ -275,7 +273,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="752" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.12267658" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -358,28 +355,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ARIMA.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        <state relative-caret-position="294">
+          <caret line="88" selection-start-line="88" selection-end-line="88" selection-end-column="30" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FPgrowth.py">
+    <entry file="file://$PROJECT_DIR$/customerSegmentation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="25" selection-start-line="25" selection-end-line="25" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="17" lean-forward="true" selection-start-column="17" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/customerSegmentation.py">
+    <entry file="file://$PROJECT_DIR$/FPgrowth.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="276">
+          <caret line="60" column="39" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
