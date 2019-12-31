@@ -43,19 +43,15 @@ te_ary = te.fit(tid).transform(tid)
 df = pd.DataFrame(te_ary, columns=te.columns_)
 frequent_itemsets = fpgrowth(df, min_support=0.01, use_colnames=True)
 print("frequent items")
-print(type(frequent_itemsets))
 print(frequent_itemsets)
 
 frequent_itemsets['itemsets']= [list(x) for x in frequent_itemsets['itemsets']]
-print(type(frequent_itemsets['itemsets']))
 
 itemslist=list()
 for index, rows in frequent_itemsets.iterrows():
     il=list()
     for f in range(len(rows['itemsets'])):
         il.append(unique_items[rows['itemsets'][f]])
-        print(rows['itemsets'][f])
-        print(unique_items[rows['itemsets'][f]])
     itemslist.append(il)
 
 frequent_itemsets['itemsets']=itemslist

@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af44dbb6-14fa-4cf6-b2d5-e4faf9c01b71" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/FPgrowth.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/FPgrowth.py" beforeDir="false" afterPath="$PROJECT_DIR$/FPgrowth.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FPgrowth.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/FPgrowth.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customerSegmentation.py" beforeDir="false" afterPath="$PROJECT_DIR$/customerSegmentation.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FPgrowth.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="60" column="39" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
+            <state relative-caret-position="164">
+              <caret line="45" column="24" lean-forward="true" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -273,6 +271,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="752" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.12267658" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -372,8 +371,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FPgrowth.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="60" column="39" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
+        <state relative-caret-position="164">
+          <caret line="45" column="24" lean-forward="true" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
           </folding>
