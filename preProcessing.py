@@ -26,3 +26,7 @@ new_dff = new_df.to_frame()
 new_dff.to_excel('after_ETL.xlsx')
 
 print(df.head)
+
+import os
+import ARIMA
+os.system('python ARIMA.py')

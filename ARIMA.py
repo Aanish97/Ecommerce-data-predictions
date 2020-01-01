@@ -1,6 +1,3 @@
-from pandas import read_csv
-import numpy as np
-from datetime import datetime
 import pandas as pd
 from pandas import datetime
 from matplotlib import pyplot
