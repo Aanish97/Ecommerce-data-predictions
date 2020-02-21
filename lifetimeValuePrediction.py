@@ -74,6 +74,30 @@ last3Months['Revenue'] = last3Months['UnitPrice'] * last3Months['Quantity']
 users3Months = last3Months.groupby('CustomerID')['Revenue'].sum().reset_index()
 users3Months.columns = ['CustomerID','m3_Revenue']
 
+tx_merge = pd.merge(users, last6Months, on='CustomerID', how='left')
+tx_merge = tx_merge.fillna(0)
+
+tx_graph = tx_merge.query("m6_Revenue < 30000")
+
 #RFM completed, continuing LTV scores
 
+import xgboost as xgb
+#from sklearn.model_selection import KFold, cross_val_score, train_test_split
 
+
+import matplotlib.pyplot as plt
+import chart_studio.plotly as py
+import plotly.offline as pyoff
+import plotly.graph_objs as go
+
+plot_data = [
+    go.Histogram(
+        x=users3Months.query('m3_Revenue < 10000')['m3_Revenue']
+    )
+]
+
+plot_layout = go.Layout(
+        title='3 month Revenue'
+    )
+fig = go.Figure(data=plot_data, layout=plot_layout)
+pyoff.iplot(fig)
